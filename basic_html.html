@@ -60,9 +60,34 @@
           <area shape="circle" coords="337,300,44" alt="Cup of coffee" href="#">
         </map>
         
+        
+<figure>
+    <img src="images/coffeehouse2.jpg" alt="Trulli" style="width:50%">
+    <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption>
+  </figure>
     
-    
-    
-    
+  <p>Click the button to get your coordinates.</p>
+
+  <button onclick="getLocation()">Try It</button>
+  
+  <p id="demo"></p>
+  
+  <script>
+  var x = document.getElementById("demo");
+  
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+      x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+  }
+  
+  function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
+  }
+  </script>
+  
     </body> 
 </html>
